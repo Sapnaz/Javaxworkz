@@ -226,3 +226,96 @@ WHERE population > 20000000 OR time_zone = 'Pacific';
 SELECT * FROM state_info WHERE state_id IN (4, 5, 6);
 SELECT * FROM state_info WHERE state_id NOT IN (7, 8, 9);
 
+USE assign;
+
+CREATE DATABASE RTO;
+USE RTO;
+
+CREATE TABLE LLR_INFO (
+    LLR_ID INT PRIMARY KEY,
+    Applicant_Name VARCHAR(100) NOT NULL,
+    Date_of_Birth DATE NOT NULL,
+    Address VARCHAR(255),
+    Mobile_Number VARCHAR(15),
+    Email VARCHAR(100),
+    Application_Date DATE,
+    Status VARCHAR(50),
+    Expiry_Date DATE,
+    Issued_By VARCHAR(100)
+);
+
+CREATE TABLE LLR_TEST_INFO (
+    LLR_ID INT,
+    TEST_ID INT PRIMARY KEY,
+    Test_Date DATE,
+    Test_Result VARCHAR(50),
+    FOREIGN KEY (LLR_ID) REFERENCES LLR_INFO(LLR_ID)
+);
+
+CREATE TABLE DRIVING_LICENCE_INFO (
+    DL_ID INT PRIMARY KEY,
+    TEST_ID INT,
+    LLR_ID INT,
+    Issue_Date DATE,
+    Expiry_Date DATE,
+    License_Number VARCHAR(100),
+    Issued_By VARCHAR(100),
+    Status VARCHAR(50),
+    Holder_Name VARCHAR(100),
+    Address VARCHAR(255),
+    FOREIGN KEY (TEST_ID) REFERENCES LLR_TEST_INFO(TEST_ID),
+    FOREIGN KEY (LLR_ID) REFERENCES LLR_INFO(LLR_ID)
+);
+
+CREATE TABLE DRIVING_LICENSE_TEST_INFO (
+    DL_ID INT,
+    Test_Date DATE,
+    Test_Result VARCHAR(50),
+    FOREIGN KEY (DL_ID) REFERENCES DRIVING_LICENCE_INFO(DL_ID)
+);
+
+INSERT INTO LLR_INFO (LLR_ID, Applicant_Name, Date_of_Birth, Address, Mobile_Number, Email, Application_Date, Status, Expiry_Date, Issued_By)
+VALUES
+(1, 'John Doe', '1990-01-01', '123 Elm St', '555-0101', 'john@example.com', '2024-01-01', 'Pending', '2025-01-01', 'RTO Office A'),
+-- Add more rows up to 20
+(20, 'Jane Smith', '1985-05-15', '456 Oak St', '555-2020', 'jane@example.com', '2024-02-15', 'Approved', '2025-02-15', 'RTO Office B');
+
+INSERT INTO LLR_TEST_INFO (LLR_ID, TEST_ID, Test_Date, Test_Result)
+VALUES
+(1, 101, '2024-01-15', 'Pass'),
+-- Add more rows up to 20
+(20, 120, '2024-03-10', 'Pass');
+
+INSERT INTO DRIVING_LICENCE_INFO (DL_ID, TEST_ID, LLR_ID, Issue_Date, Expiry_Date, License_Number, Issued_By, Status, Holder_Name, Address)
+VALUES
+(1, 101, 1, '2024-01-20', '2029-01-20', 'DL123456789', 'RTO Office A', 'Active', 'John Doe', '123 Elm St'),
+-- Add more rows up to 20
+(20, 120, 20, '2024-03-15', '2029-03-15', 'DL987654321', 'RTO Office B', 'Active', 'Jane Smith', '456 Oak St');
+
+INSERT INTO DRIVING_LICENSE_TEST_INFO (DL_ID, Test_Date, Test_Result)
+VALUES
+(1, '2024-01-18', 'Pass'),
+-- Add more rows up to 20
+(20, '2024-03-12', 'Pass');
+
+INSERT INTO LLR_INFO (LLR_ID, Applicant_Name, Date_of_Birth, Address, Mobile_Number, Email, Application_Date, Status, Expiry_Date, Issued_By)
+VALUES (1, 'John Doe', '1990-01-01', '123 Elm St', '555-0101', 'john@example.com', '2024-01-01', 'Pending', '2025-01-01', 'RTO Office A')
+ON DUPLICATE KEY UPDATE
+    Applicant_Name = VALUES(Applicant_Name),
+    Date_of_Birth = VALUES(Date_of_Birth),
+    Address = VALUES(Address),
+    Mobile_Number = VALUES(Mobile_Number),
+    Email = VALUES(Email),
+    Application_Date = VALUES(Application_Date),
+    Status = VALUES(Status),
+    Expiry_Date = VALUES(Expiry_Date),
+    Issued_By = VALUES(Issued_By);
+
+    
+REPLACE INTO LLR_INFO (LLR_ID, Applicant_Name, Date_of_Birth, Address, Mobile_Number, Email, Application_Date, Status, Expiry_Date, Issued_By)
+VALUES
+(1, 'John Doe', '1990-01-01', '123 Elm St', '555-0101', 'john@example.com', '2024-01-01', 'Pending', '2025-01-01', 'RTO Office A');
+
+
+
+
