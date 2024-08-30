@@ -1,0 +1,25 @@
+CSS
+3 types
+inline-->inside html element
+internal--><style></style>
+external-->another.CSS
+
+
+inline CSS
+
+
+
+Internal css
+External css
+
+selectors
+4 types of selectors are there
+
+1.element selectors-->denoted by ->html element
+2.id selector-->#with id name
+3.class selector-->.with class name
+4.universel selector-->*
+5.psuedo selector
+
+to define internal and external css we use selectors
+combinators
