@@ -1,9 +1,10 @@
 package com.xworkz.datatypes.things;
 
+import com.xworkz.datatypes.ColgateToothpaste1;
+
 public class ToothpasteRunner {
 
-	private static final String True = null;
-
+	
 	public static void main(String[] args) {
 		
 				ColgateToothpaste1 colgateToothpaste=new ColgateToothpaste1 ("Active Salt",True);

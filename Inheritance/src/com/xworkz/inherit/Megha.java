@@ -4,7 +4,7 @@ public class Megha {
 
 	public void wash()
 	{
-		washingMachine washingmachine=new washingMachine("LG","top load",15000)
-		washingMachine.show();	
+		WashingMachine washingmachine=new WashingMachine("LG","top load",15000)
+		WashingMachine.show();	
 	}
 }

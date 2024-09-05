@@ -1,8 +1,10 @@
-package src.com.xworkz.inheritRunner;
+package com.xworkz.inheritRunner;
 
-import src.com.xworkz.inherit.Lakshmi;
-import src.com.xworkz.inherit.Megha;
-import src.com.xworkz.inherit.WashingMachine;
+import com.xworkz.inherit.WashingMachine;
+import com.xworkz.inherit.Abhishek;
+import com.xworkz.inherit.Lakshmi;
+
+import com.xworkz.inherit.Megha;
 
 public class washingmachineRunner {
 

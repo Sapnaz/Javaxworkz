@@ -1,4 +1,4 @@
-package src.com.xworkz.inherit;
+package com.xworkz.inherit;
 
 public class WashingMachine {
 	
@@ -19,7 +19,7 @@ public class WashingMachine {
 				this.price = price;
 			}
 
-			public void rinse()
+			public static void rinse()
 			{
 				System.out.println("Running a rinse in Washing machine");
 			}
@@ -28,9 +28,9 @@ public class WashingMachine {
 			{
 				System.out.println(this.brand);
 				System.out.println(this.type);
-				System.out.println(this.capacity);
+				System.out.println(this.price);
 			}
-		}
-	}
-
+		
 }
+
+

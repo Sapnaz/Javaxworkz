@@ -1,4 +1,4 @@
-package src.com.xworkz.inherit;
+package com.xworkz.inherit;
 
 public class Ani {
 
@@ -7,7 +7,6 @@ public class Ani {
 		if(bakery != null)
 		{
 			Bakery.bakes();
-			Bakery.display();
 		}
 		else 
 		{

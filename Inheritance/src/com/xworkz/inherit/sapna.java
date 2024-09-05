@@ -1,12 +1,18 @@
-package src.com.xworkz.inherit;
+package com.xworkz.inherit;
 
-public class sapna {
-	
-	public void eat()
+public class Police {
+
+	public void hold(Gun gun)
 	{
-		Bakery bakery=new Bakery("cornerhouse","Bengaluru","iyengar");
-		Bakery.bakes();
-		Bakery.display();
+		if(gun !=null)
+		{
+			gun.fire();
+			gun.display();
+		}
+		else {
+			System.out.println("Gun is Null");
+		}
+
 	}
 
 }

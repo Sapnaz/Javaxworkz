@@ -1,4 +1,4 @@
-package src.com.xworkz.inheritRunner;
+packagecom.xworkz.inheritRunner;
 
 import src.com.xworkz.inherit.Ani;
 import src.com.xworkz.inherit.Bakery;

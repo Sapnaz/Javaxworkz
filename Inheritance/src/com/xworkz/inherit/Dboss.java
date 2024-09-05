@@ -1,8 +1,8 @@
-package src.com.xworkz.inherit;
+package com.xworkz.inherit;
 
 public class Dboss {
 	private Gun gun;
-	publiv void actor()
+	public void actor()
 	{
 		this.gun=gun;
 	}

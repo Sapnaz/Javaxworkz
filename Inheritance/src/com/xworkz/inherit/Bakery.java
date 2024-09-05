@@ -1,4 +1,4 @@
-package src.com.xworkz.inherit;
+package com.xworkz.inherit;
 
 public class Bakery {
 	private String name;
