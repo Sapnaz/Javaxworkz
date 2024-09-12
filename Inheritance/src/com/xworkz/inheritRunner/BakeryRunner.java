@@ -8,15 +8,13 @@ import src.com.xworkz.inherit.String;
 import src.com.xworkz.inherit.sapna;
 
 public class BakeryRunner {
-		public class BakeryRunner {
-
+		
 			public static void main(String[] args) {
 				Bakery bakery=new Bakery();
 				bakery.bakes();
 				bakery.display();
 				
 				sapna sapna=new sapna();
-				sapna.Bakery()
 				sapna.eat();
 				
 				Ani ani=new Ani();

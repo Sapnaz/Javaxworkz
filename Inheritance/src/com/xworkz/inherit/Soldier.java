@@ -1,4 +1,4 @@
-package src.com.xworkz.inherit;
+package com.xworkz.inherit;
 
 public class Soldier {
 	public void have()
@@ -6,4 +6,5 @@ public class Soldier {
 	Gun gun =new Gun("Remington 870","United States","ShotGun");
 	Gun.display();
 	
+}
 }

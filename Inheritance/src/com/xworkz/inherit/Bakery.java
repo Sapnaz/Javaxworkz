@@ -17,7 +17,7 @@ public class Bakery {
 		this.type=type;
 		System.out.println("created bakery");
 	}
-	public void bakes()
+	public static void bakes()
 	{
 		System.out.println("Running bakes in bakery");
 	}

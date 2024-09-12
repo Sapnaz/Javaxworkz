@@ -2,6 +2,7 @@ package com.xworkz.inheritRunner;
 
 import com.xworkz.inherit.WashingMachine;
 import com.xworkz.inherit.Abhishek;
+import com.xworkz.inherit.Bhoomika;
 import com.xworkz.inherit.Lakshmi;
 
 import com.xworkz.inherit.Megha;
